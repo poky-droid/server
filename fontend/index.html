@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Monitoring Dashboard</title>
+
+  <!-- Bootstrap & Chart.js -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container py-4">
+    <div class="dashboard-header">
+      <h2 class="text-center">
+        <span class="status-indicator status-online" id="serverStatus"></span>
+        Server Monitoring Dashboard
+      </h2>
+      <p class="text-center refresh-time">Last updated: <span id="lastUpdate">updating...</span></p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5><i class="bi bi-cpu"></i> CPU Usage</h5>
+          <div class="chart-container mb-3">
+            <canvas id="cpuChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <canvas id="cpuHistoryChart"></canvas>
+          </div>
+          <div class="stats-value" id="cpuValue">0%</div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5><i class="bi bi-memory"></i> Memory Usage</h5>
+          <div class="chart-container mb-3">
+            <canvas id="memChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <canvas id="memHistoryChart"></canvas>
+          </div>
+          <div class="stats-value" id="memValue">0%</div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5><i class="bi bi-hdd"></i> Disk Usage</h5>
+          <div class="chart-container">
+            <canvas id="diskChart"></canvas>
+          </div>
+          <div class="stats-value" id="diskValue">0%</div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5><i class="bi bi-arrow-left-right"></i> Network Traffic</h5>
+          <div class="network-stats">
+            <p>
+              <i class="bi bi-arrow-up-circle"></i>
+              <span class="label">Upload:</span>
+              <span id="sent" class="float-end">0 B/s</span>
+            </p>
+            <p>
+              <i class="bi bi-arrow-down-circle"></i>
+              <span class="label">Download:</span>
+              <span id="recv" class="float-end">0 B/s</span>
+            </p>
+          </div>
+          <div class="chart-container">
+            <canvas id="networkChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+body {
+  background: #1a1a1a;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  background: #2d2d2d;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h5 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.stats-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.network-stats {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.network-stats .label {
+  color: #888;
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 160px;
+  width: 100%;
+}
+
+/* Container untuk line chart */
+.chart-container:last-child {
+  height: 120px;
+  margin-top: 1rem;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-online {
+  background-color: #3ac569;
+}
+
+.refresh-time {
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1rem;
+}
